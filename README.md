@@ -31,6 +31,26 @@ You can override paths with CLI args:
 - `--weights models/detectron2/...`
 - `--config configs/detectron2/...`
 
+## Signal labels and confidence
+- `signal = 0`: Buy
+- `signal = 1`: Sell
+- The percentage shown on each image is the model confidence (probability) for the predicted signal, interpreted as the estimated signal correctness.
+
+## Sample output images
+### Signal detection (`data/metadata/predictions/signal_detection`)
+![signal detection sample 1](data/metadata/predictions/signal_detection/candle_2025-01-02_part_1.png)
+![signal detection sample 2](data/metadata/predictions/signal_detection/candle_2025-01-02_part_10.png)
+![signal detection sample 3](data/metadata/predictions/signal_detection/candle_2025-01-02_part_11.png)
+![signal detection sample 4](data/metadata/predictions/signal_detection/candle_2025-01-02_part_12.png)
+![signal detection sample 5](data/metadata/predictions/signal_detection/candle_2025-01-02_part_13.png)
+
+### Range-trained detection (`data/metadata/predictions/range_trained`)
+![range trained sample 1](data/metadata/predictions/range_trained/candle_2025-01-02_part_1.png)
+![range trained sample 2](data/metadata/predictions/range_trained/candle_2025-01-02_part_2.png)
+![range trained sample 3](data/metadata/predictions/range_trained/candle_2025-01-02_part_3.png)
+![range trained sample 4](data/metadata/predictions/range_trained/candle_2025-01-02_part_4.png)
+![range trained sample 5](data/metadata/predictions/range_trained/candle_2025-01-02_part_5.png)
+
 ## Model download setup
 1. Upload the model files to your preferred storage (GitHub Releases, Hugging Face, S3, etc.).
 2. Put direct download URLs (and optional sha256) into `configs/model_sources.json`.

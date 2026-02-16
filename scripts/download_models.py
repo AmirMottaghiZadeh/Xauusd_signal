@@ -5,6 +5,7 @@ import json
 import sys
 import urllib.request
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
 
 SCRIPT_PATH = Path(__file__).resolve()
@@ -27,6 +28,34 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: file_handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def extract_google_drive_file_id(url: str) -> str:
+    parsed = urlparse(url)
+    host = parsed.netloc.lower()
+    if not (host.endswith("drive.google.com") or host.endswith("drive.usercontent.google.com")):
+        return ""
+
+    path_parts = [part for part in parsed.path.split("/") if part]
+    if len(path_parts) >= 3 and path_parts[0] == "file" and path_parts[1] == "d":
+        return path_parts[2]
+
+    query = parse_qs(parsed.query)
+    ids = query.get("id", [])
+    return ids[0] if ids else ""
+
+
+def normalize_download_url(url: str) -> str:
+    file_id = extract_google_drive_file_id(url)
+    if not file_id:
+        return url
+    return f"https://drive.usercontent.google.com/download?id={file_id}&export=download&confirm=t"
+
+
+def looks_like_html(path: Path) -> bool:
+    with path.open("rb") as file_handle:
+        header = file_handle.read(4096).lower()
+    return b"<html" in header or b"<!doctype html" in header
 
 
 def download_file(url: str, destination: Path, timeout: int) -> None:
@@ -79,6 +108,8 @@ def main() -> int:
             missing_urls.append(f"[{name}] set url for {rel_path}")
             continue
 
+        download_url = normalize_download_url(url)
+
         output_path = (ROOT / rel_path).resolve()
         if ROOT not in output_path.parents and output_path != ROOT:
             failures.append(f"[{name}] file_path escapes project root: {rel_path}")
@@ -97,9 +128,16 @@ def main() -> int:
 
         print(f"[download] {name} -> {output_path}")
         try:
-            download_file(url, output_path, args.timeout)
+            download_file(download_url, output_path, args.timeout)
         except Exception as exc:
             failures.append(f"[{name}] download failed: {exc}")
+            continue
+
+        if looks_like_html(output_path):
+            output_path.unlink(missing_ok=True)
+            failures.append(
+                f"[{name}] downloaded HTML page instead of model file. Check URL/public access."
+            )
             continue
 
         if expected_hash:

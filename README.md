@@ -37,29 +37,36 @@ You can override paths with CLI args:
 - The percentage shown on each image is the model confidence (probability) for the predicted signal, interpreted as the estimated signal correctness.
 
 ## Sample output images
-### Signal detection (`data/metadata/predictions/signal_detection`)
-![signal detection sample 1](data/metadata/predictions/signal_detection/candle_2025-01-02_part_1.png)
-![signal detection sample 2](data/metadata/predictions/signal_detection/candle_2025-01-02_part_10.png)
-![signal detection sample 3](data/metadata/predictions/signal_detection/candle_2025-01-02_part_11.png)
-![signal detection sample 4](data/metadata/predictions/signal_detection/candle_2025-01-02_part_12.png)
-![signal detection sample 5](data/metadata/predictions/signal_detection/candle_2025-01-02_part_13.png)
+Sample images below are stored under `docs/assets/samples` so links stay valid after push.
 
-### Range-trained detection (`data/metadata/predictions/range_trained`)
-![range trained sample 1](data/metadata/predictions/range_trained/candle_2025-01-02_part_1.png)
-![range trained sample 2](data/metadata/predictions/range_trained/candle_2025-01-02_part_2.png)
-![range trained sample 3](data/metadata/predictions/range_trained/candle_2025-01-02_part_3.png)
-![range trained sample 4](data/metadata/predictions/range_trained/candle_2025-01-02_part_4.png)
-![range trained sample 5](data/metadata/predictions/range_trained/candle_2025-01-02_part_5.png)
+### Signal detection (`docs/assets/samples/signal_detection`)
+![signal detection sample 1](docs/assets/samples/signal_detection/candle_2025-01-02_part_1.png)
+![signal detection sample 2](docs/assets/samples/signal_detection/candle_2025-01-02_part_10.png)
+![signal detection sample 3](docs/assets/samples/signal_detection/candle_2025-01-02_part_11.png)
+![signal detection sample 4](docs/assets/samples/signal_detection/candle_2025-01-02_part_12.png)
+![signal detection sample 5](docs/assets/samples/signal_detection/candle_2025-01-02_part_13.png)
+
+### Range-trained detection (`docs/assets/samples/range_trained`)
+![range trained sample 1](docs/assets/samples/range_trained/candle_2025-01-02_part_1.png)
+![range trained sample 2](docs/assets/samples/range_trained/candle_2025-01-02_part_2.png)
+![range trained sample 3](docs/assets/samples/range_trained/candle_2025-01-02_part_3.png)
+![range trained sample 4](docs/assets/samples/range_trained/candle_2025-01-02_part_4.png)
+![range trained sample 5](docs/assets/samples/range_trained/candle_2025-01-02_part_5.png)
 
 ## Model download setup
-1. Upload the model files to your preferred storage (GitHub Releases, Hugging Face, S3, etc.).
-2. Put direct download URLs (and optional sha256) into `configs/model_sources.json`.
+1. Model URLs are preconfigured in `configs/model_sources.json` (Google Drive links).
+2. You can use either a shared Drive link (`.../file/d/<id>/view`) or a direct URL; the downloader normalizes Drive links automatically.
 3. Run:
 ```bash
 python scripts/download_models.py
 ```
 
+Configured sources:
+- Range-trained model: https://drive.google.com/file/d/18-NDOWh_VPnmVonfx5rIIREmdwwLI8pS/view?usp=drive_link
+- Signal detection model: https://drive.google.com/file/d/1ec8zqmd0eWHFjPiVbmTlF69QoeArulZR/view?usp=drive_link
+
 ## Publishing notes
 - `data/external` images and CSV files are intentionally versioned in this repo.
 - Local cloned source folder `detectron2/` is ignored in the root repo to avoid embedded-git/submodule issues.
 - Heavy `.pth` files under `models/detectron2` are ignored to keep the git history lightweight.
+- `data/metadata/predictions` is ignored (generated output), so README images are kept in `docs/assets/samples`.

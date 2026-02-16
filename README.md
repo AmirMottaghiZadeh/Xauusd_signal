@@ -41,17 +41,15 @@ Sample images below are stored under `docs/assets/samples` so links stay valid a
 
 ### Signal detection (`docs/assets/samples/signal_detection`)
 ![signal detection sample 1](docs/assets/samples/signal_detection/candle_2025-01-02_part_1.png)
-![signal detection sample 2](docs/assets/samples/signal_detection/candle_2025-01-02_part_10.png)
-![signal detection sample 3](docs/assets/samples/signal_detection/candle_2025-01-02_part_11.png)
-![signal detection sample 4](docs/assets/samples/signal_detection/candle_2025-01-02_part_12.png)
-![signal detection sample 5](docs/assets/samples/signal_detection/candle_2025-01-02_part_13.png)
+![signal detection sample 2](docs/assets/samples/signal_detection/candle_2025-01-02_part_11.png)
+![signal detection sample 3](docs/assets/samples/signal_detection/candle_2025-01-02_part_12.png)
+![signal detection sample 4](docs/assets/samples/signal_detection/candle_2025-01-02_part_13.png)
 
 ### Range-trained detection (`docs/assets/samples/range_trained`)
 ![range trained sample 1](docs/assets/samples/range_trained/candle_2025-01-02_part_1.png)
 ![range trained sample 2](docs/assets/samples/range_trained/candle_2025-01-02_part_2.png)
 ![range trained sample 3](docs/assets/samples/range_trained/candle_2025-01-02_part_3.png)
-![range trained sample 4](docs/assets/samples/range_trained/candle_2025-01-02_part_4.png)
-![range trained sample 5](docs/assets/samples/range_trained/candle_2025-01-02_part_5.png)
+![range trained sample 4](docs/assets/samples/range_trained/candle_2025-01-02_part_5.png)
 
 ## Model download setup
 1. Model URLs are preconfigured in `configs/model_sources.json` (Google Drive links).

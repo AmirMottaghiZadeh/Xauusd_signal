@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "name": "range_trained",
+      "file_path": "models/detectron2/range_trained/model_final.pth",
+      "url": "",
+      "sha256": ""
+    },
+    {
+      "name": "signal_detection",
+      "file_path": "models/detectron2/signal_detection/setup_detection.pth",
+      "url": "",
+      "sha256": ""
+    }
+  ]
+}

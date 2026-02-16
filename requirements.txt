@@ -1,0 +1,19 @@
+# Core ML / detection
+torch
+torchvision
+detectron2
+
+# Data & plotting
+numpy
+pandas
+matplotlib
+mplfinance
+openpyxl
+
+# Images / vision
+opencv-python
+Pillow
+
+# Trading / feature engineering
+vectorbt
+MetaTrader5

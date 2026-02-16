@@ -1,0 +1,31 @@
+# Python cache/artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / OS files
+.idea/
+.vscode/
+.DS_Store
+
+# Generated outputs
+data/metadata/predictions/
+data/outputs/
+
+# Avoid nested-git repository in this project root
+detectron2/
+
+# Keep these assets tracked in the public repo
+!data/external/**/*.png
+!data/external/**/*.csv
+
+# Keep heavy model weights out of git history
+models/detectron2/**/*.pth

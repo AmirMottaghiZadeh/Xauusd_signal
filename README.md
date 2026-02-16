@@ -162,18 +162,16 @@ Sample images are stored in `docs/assets/samples` to keep README links stable af
 ### Signal Detection
 
 ![signal detection sample 1](docs/assets/samples/signal_detection/candle_2025-01-02_part_1.png)
-![signal detection sample 2](docs/assets/samples/signal_detection/candle_2025-01-02_part_10.png)
-![signal detection sample 3](docs/assets/samples/signal_detection/candle_2025-01-02_part_11.png)
-![signal detection sample 4](docs/assets/samples/signal_detection/candle_2025-01-02_part_12.png)
-![signal detection sample 5](docs/assets/samples/signal_detection/candle_2025-01-02_part_13.png)
+![signal detection sample 2](docs/assets/samples/signal_detection/candle_2025-01-02_part_11.png)
+![signal detection sample 3](docs/assets/samples/signal_detection/candle_2025-01-02_part_12.png)
+![signal detection sample 4](docs/assets/samples/signal_detection/candle_2025-01-02_part_13.png)
 
 ### Range-Trained Detection
 
 ![range trained sample 1](docs/assets/samples/range_trained/candle_2025-01-02_part_1.png)
 ![range trained sample 2](docs/assets/samples/range_trained/candle_2025-01-02_part_2.png)
 ![range trained sample 3](docs/assets/samples/range_trained/candle_2025-01-02_part_3.png)
-![range trained sample 4](docs/assets/samples/range_trained/candle_2025-01-02_part_4.png)
-![range trained sample 5](docs/assets/samples/range_trained/candle_2025-01-02_part_5.png)
+![range trained sample 4](docs/assets/samples/range_trained/candle_2025-01-02_part_5.png)
 
 ## 10. Troubleshooting
 
